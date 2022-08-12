@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type = "module" src = "./script.js">
+
+</script></head>
+<body>
+
+<input type="radio" name="sex" value="male" checked>
+<label for="html">male</label><br>
+<input type="radio" name="sex" value="female">
+<label for="css">female</label><br>
+
+<select id = "race">
+	<option selected>Argonian</option>
+	<option>Imperial</option>
+	<option>Orc</option>
+</select>
+<br>
+<br>
+<input type = "text" id = "realName"/><span> </span><button id = "generate">Generate</button>
+<br>
+<br>
+<span id = "output"></span>
+
+</body>
+</html>
+
+<!-- so regex ideas:
+Argonian:
+-e without another e before or after it must become a double ee
+RegEx theory: /[^e][e][^e]/
+-"is" becomes "us" if its at the end (space after it)
+RegEx theory: /(is)/
+-There's a hyphen if two names are provided, or apostrophe?
+RegEx theory: /\s/
+
+Imperial:
+-male name must end with "ius", female with "a"
+Regex theory: /[a-z]\s/ for first name.  Somehow I have $ for the last character
+-Remove apostrophes
+
+Orc:
+-Last name (name with space before but not after) is prefaced with gro- or gra- depending on gender
+Regex theory: /\s/ replace with " gra-" or " gro-"
+-Replace certian suffixes with "grum"
+RegEx Theory: /[(uel)(dra)(is)]/
+-Remove apostropes
+-S at the beginning becomes Sh, s in the middle or end becomes z.  Maybe simple based this on capitalization? -->
